@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link
+    rel="stylesheet"
+    href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='project-style.css'>
+  <script defer src='ajax.js'></script>
+  <script defer src='display.js'></script>
+
+    <title>Document</title>
+  </head>
+  <body class="parallax">
+    <h2 class="title">Crypto-Graph</h2>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Crypto-Graph </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="home nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="report nav-link" href="#">Live Report</a>
+          </li>
+          <li class="nav-item dropdown">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown"></div>
+          </li>
+          <li class="nav-item">
+            <a class="about nav-link" href="#">About</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            id="searchBar"
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1 style='color: white; text-align: center;padding: 15px;'>Crypto-Coins</h2>
+        
+
+      <div class="container-about">
+        <h2>About me:</h2>
+        <p>
+          My name is Sagi Hindi,Im 28 years old, i leave in shoham.
+          I did this project as part of my studies at John Bryce College.
+        </p>
+        
+      </div>
+      
+      <div class="row coins-container">
+
+
+      </div>
+
+      <div class='progressBar'>
+        <img src="loading.gif">
+      </div>
+      
+
+      <div class='More-Info'>
+
+      </div>
+      <div class='container-report'></div>
+      <div class='popUp' >
+
+
+      </div>
+    </div>
+    
+    
+
+
+
+    
+    
+    <!-- <script>
+      // let searchList;
+      // setTimeout(function (){
+      //   console.log(searchList)
+      // },1000)
+
+//       const searchBar = document.getElementById("searchBar");
+
+//       searchBar.addEventListener("keyup", (event) => {
+//         const serachString = event.target.value.toLowerCase();
+//         const searchFiltered = searchList.filter((serachName) => {
+//           return (
+//             serachName.name.toLowerCase().includes(serachString) ||
+//             serachName.symbol.toLowerCase().includes(serachString)
+//           );
+//         });
+//         document.querySelector(".coins-container").innerHTML = "";
+//         renderList(searchFiltered);
+//       });
+
+//       $(".container-about").hide();
+
+//       $(".about").on("click", () => {
+//         $(".coins-container").hide();
+//         $(".container-about").show();
+//       });
+//       $(".home").on("click", () => {
+//         $(".container-about").hide();
+//         $(".coins-container").show();
+//       });
+
+//       async function getCoins() {
+//         await fetch("https://api.coingecko.com/api/v3/coins/list")
+//           .then((list) => {
+//             return list.json();
+//           })
+//           .then((list) => {
+//             searchList = list;
+//             renderList(list);
+//           })
+//           .catch((error) => {});
+//       }
+//       getCoins();
+
+
+//       function renderList(list) {
+//         const shortList = list.slice(0, 100);
+//         shortList.forEach((item) => {
+//           const id = item.id;
+//           const name = item.name;
+//           const symbol = item.symbol;
+//           $(".coins-container").append(`<div class="card col-2" >
+//   <div class="card-body">
+//     <h5 class="card-title">${item.symbol}</h5>
+//     <p class="card-text">${item.name}</p>
+//     <a href="#" class="btn btn-primary">More-Info</a>
+//   </div>
+// </div> `);
+//         });
+//       }
+
+      // function getCoins(){
+      // const list = $.ajax({ url:'https://api.coingecko.com/api/v3/coins/list'})
+      // .then(list =>{
+      //     const shortList = list.slice(0, 100)
+      //     console.log(shortList)
+      //     return shortList
+      //     })
+      // .then(shortList =>{
+      //     shortList.forEach(item =>{
+      //         const id = item.id
+      //         const name = item.name
+      //         const symbol = item.symbol
+      //         $(`<div class="coin">
+      //                 <div>${id}</div>
+      //                  <div>${name}</div>
+      //                  <div>${symbol}</div>
+      //             </div>
+      //          `).appendTo($('.coins-container'))
+      //     })
+      // })
+
+      // }
+
+      //         getCoins() -->
+    <!-- </script> -->
+  </body>
+</html>
